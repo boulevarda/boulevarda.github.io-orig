@@ -1,3 +1,15 @@
+pct=100
+amt=`convert -ping index.jpg -format "%[fx:$pct*min(w,h)/100]" info:`
+convert index.jpg \( -density 300 -background None banner.svg -resize \$amt \) \( -density 300 -background None buildings.svg \) -gravity center -compose over -composite index_watermark.png
+
+convert index.jpg \( -density 300 -background None buildings.svg \) \( -density 300 -background None banner.svg -resize \$amt \) -gravity center -compose over -composite index_watermark.png
+
+width=$(identify -format %w index.jpg)
+convert -background '#0008' -fill white -gravity center \
+  -size ${width} caption:boulevarda.com \
+ index.jpg +swap -gravity center -composite \
+ index_watermark.png
+
 # gatsby-starter-spectral
 
 Gatsby.js V2 starter template based on Spectral by HTML5 UP
