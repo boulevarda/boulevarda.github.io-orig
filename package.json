@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@pauliescanlon/gatsby-mdx-embed": "^0.0.29",
-    "gatsby": "^2.24.54",
+    "gatsby": "^4.25.7",
     "gatsby-theme-blog": "^2.0.1",
     "gatsby-theme-notes": "^2.0.1",
     "react": "^16.12.0",
